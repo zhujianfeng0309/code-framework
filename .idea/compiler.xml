@@ -25,7 +25,6 @@
         <module name="code-dubbo" />
         <module name="code-generate" />
         <module name="code-rpc" />
-        <module name="code-thread" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

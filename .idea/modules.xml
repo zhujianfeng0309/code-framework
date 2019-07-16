@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/code-framework.iml" filepath="$PROJECT_DIR$/code-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/code-generate/code-generate.iml" filepath="$PROJECT_DIR$/code-generate/code-generate.iml" />
       <module fileurl="file://$PROJECT_DIR$/code-rpc/code-rpc.iml" filepath="$PROJECT_DIR$/code-rpc/code-rpc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code-dubbo/code-thread.iml" filepath="$PROJECT_DIR$/code-dubbo/code-thread.iml" />
     </modules>
   </component>
 </project>
