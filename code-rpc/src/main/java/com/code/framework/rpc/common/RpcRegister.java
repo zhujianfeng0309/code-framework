@@ -23,7 +23,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/5/13
  */
 public class RpcRegister implements  BeanFactoryPostProcessor {

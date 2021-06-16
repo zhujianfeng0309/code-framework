@@ -3,7 +3,6 @@ package com.generate.framework.util;
 import org.springframework.util.StringUtils;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/7/12
  */
 public class StringReplaceUtil {

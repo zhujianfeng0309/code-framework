@@ -1,7 +1,6 @@
 package com.code.framework.rpc.common;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/5/13
  */
 public class RpcClientContext {

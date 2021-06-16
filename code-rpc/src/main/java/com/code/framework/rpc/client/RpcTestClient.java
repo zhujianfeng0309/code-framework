@@ -6,7 +6,6 @@ import com.code.framework.rpc.annotation.RpcInterface;
 import org.springframework.stereotype.Service;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/5/10
  */
 @Service
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service;
 public interface RpcTestClient {
 
 
-    @RpcClient(value = "RpcTestServiceImpl.testRpcService", rpcExportUrl = "http://localhost:8080/rpc")
-    Boolean testClient(String params);
+    @RpcClient(value = "RpcTestServiceImpl.testRpcService", rpcExportUrl = "http://localhost:8888/rpc")
+    String testClient(String params);
 
 }

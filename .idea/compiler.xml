@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="code-generate" />
         <module name="code-dubbo" />
+        <module name="code-generate" />
+        <module name="code-service-consumer" />
         <module name="code-rpc" />
+        <module name="code-service-provide" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +21,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="code-generate" options="-parameters" />
       <module name="code-rpc" options="-parameters" />
+      <module name="code-service-consumer" options="-parameters" />
+      <module name="code-service-provide" options="-parameters" />
     </option>
   </component>
 </project>

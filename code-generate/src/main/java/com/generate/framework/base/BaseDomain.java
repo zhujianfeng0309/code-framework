@@ -10,7 +10,6 @@ import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/7/12
  */
 @MappedSuperclass

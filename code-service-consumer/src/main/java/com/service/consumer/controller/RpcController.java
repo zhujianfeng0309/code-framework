@@ -1,4 +1,4 @@
-package com.code.framework.rpc.controller;
+package com.service.consumer.controller;
 
 import com.code.framework.rpc.client.RpcTestClient;
 import com.code.framework.rpc.common.RpcClientContext;
@@ -10,17 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.lang.reflect.Method;
-import java.util.Objects;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/5/14
  */
 @RestController
 public class RpcController {
 
     @Autowired
-    private RpcTestClient client;
+    private RpcTestClient rpcTestClient;
     @Autowired
     private RequestMappingHandlerMapping handlerMapping;
 
@@ -44,8 +42,13 @@ public class RpcController {
         //设置rpc服务端接口
         clientContext.setMethodName("RpcTestServiceImpl.testRpcService");
         RpcFactory.registerClient("RpcTestClient", "testClient", clientContext);
-        Boolean result = client.testClient("hhh");
-        return result;
+        String result = rpcTestClient.testClient("hhh");
+        return Boolean.TRUE;
+    }
+    @RequestMapping(value = "/test/rpc")
+    public String testRpc()  {
+
+        return rpcTestClient.testClient("hhh");
     }
 
 
