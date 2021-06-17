@@ -1,9 +1,7 @@
 package com.code.framework.rpc.configuration;
 
-import com.code.framework.rpc.common.RpcFactory;
-import com.code.framework.rpc.common.RpcRegister;
 import com.code.framework.rpc.annotation.EnableRPC;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.code.framework.rpc.common.RpcRegister;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +17,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author SONGJIUHUA386
- * @since 2019/5/13
+ *
  */
 public class RpcConfiguration {
 

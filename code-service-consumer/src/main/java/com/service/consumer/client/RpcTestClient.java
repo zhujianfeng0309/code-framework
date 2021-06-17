@@ -1,4 +1,4 @@
-package com.code.framework.rpc.client;
+package com.service.consumer.client;
 
 
 import com.code.framework.rpc.annotation.RpcClient;

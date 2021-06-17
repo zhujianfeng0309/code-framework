@@ -1,14 +1,11 @@
 package com.code.framework.rpc.common;
 
-import com.code.framework.rpc.annotation.RpcClient;
-import com.code.framework.rpc.annotation.RpcExporter;
 import com.code.framework.rpc.annotation.RpcInterface;
 import com.code.framework.rpc.proxy.RpcClientProxy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -16,9 +13,7 @@ import org.springframework.core.type.classreading.CachingMetadataReaderFactory;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.util.ClassUtils;
-import org.springframework.util.ReflectionUtils;
 
-import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -88,33 +83,5 @@ public class RpcRegister implements  BeanFactoryPostProcessor {
         return classSet;
     }
 
-    /**
-     * 将rpc客户端和服务端的注解配置信息 保存到RpcFactory中
-     * @param bean
-     * @param beanName
-     */
-    private void resolveRpc(Object bean, String beanName){
-        Method[] methods = ReflectionUtils.getAllDeclaredMethods(bean.getClass());
-        if (methods == null){
-            return;
-        }
-        for (Method method : methods){
-            //解析RPC服务端接口及配置
-            RpcExporter rpcExporter = AnnotationUtils.findAnnotation(method, RpcExporter.class);
-            if (rpcExporter != null){
-                RpcExporterContext exporterContext = new RpcExporterContext();
-                exporterContext.setBean(bean);
-                exporterContext.setMethod(method);
-                RpcFactory.registerExporter(beanName, method.getName(), exporterContext);
-            }
-            //解析RPC客户端接口及配置
-            RpcClient rpcClient = AnnotationUtils.findAnnotation(method, RpcClient.class);
-            if (rpcClient != null){
-                RpcClientContext clientContext = new RpcClientContext();
-                clientContext.setUrl(rpcClient.rpcExportUrl());
-                clientContext.setMethodName(rpcClient.value());
-                RpcFactory.registerClient(beanName, method.getName(), clientContext);
-            }
-        }
-    }
+
 }

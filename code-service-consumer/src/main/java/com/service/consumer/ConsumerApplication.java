@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2019/5/14
  */
 @SpringBootApplication
-@EnableRPC(basePackages = {"com.service.consumer"})
+@EnableRPC(basePackages = {"com.service.consumer.client"})
 public class ConsumerApplication {
 
     public static void main(String[] args) {

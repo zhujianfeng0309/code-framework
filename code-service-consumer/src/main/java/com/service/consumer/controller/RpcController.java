@@ -1,6 +1,6 @@
 package com.service.consumer.controller;
 
-import com.code.framework.rpc.client.RpcTestClient;
+import com.service.consumer.client.RpcTestClient;
 import com.code.framework.rpc.common.RpcClientContext;
 import com.code.framework.rpc.common.RpcExporterContext;
 import com.code.framework.rpc.common.RpcFactory;
@@ -27,7 +27,7 @@ public class RpcController {
     public Boolean test() throws NoSuchMethodException {
         RpcExporterContext exporterContext = new RpcExporterContext();
         try{
-            Class clazz = Class.forName("com.code.framework.rpc.exporter.RpcTestServiceImpl");
+            Class clazz = Class.forName("com.service.provide.service.RpcTestServiceImpl");
             Method method = clazz.getDeclaredMethod("testRpcService", String.class);
             exporterContext.setBean(clazz);
             exporterContext.setMethod(method);

@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * @author SONGJIUHUA386
  * @since 2019/5/14
  */
 @Configuration
